@@ -1,0 +1,11 @@
+--- a/torch/csrc/utils/python_arg_parser.h.orig
++++ b/torch/csrc/utils/python_arg_parser.h
+@@ -511,7 +511,7 @@
+       args->signature.params[i].name.c_str(),
+       args->signature.params[i].type_name().c_str(),
+       Py_TYPE(obj)->tp_name,
+-      idx + 1);
++      (long)(idx + 1));
+ }
+ 
+ inline std::vector<c10::SymInt> PythonArgs::symintlist(int i) {
